@@ -1,0 +1,31 @@
+# render.yaml
+# This file defines a web service for your Node.js backend on Render.com
+
+services:
+  - type: web
+    name: think41 # A unique name for your backend service
+    env: node              # Specify the environment as Node.js
+    plan: free             # You can choose 'starter', 'standard', etc., based on your needs
+    rootDir: ./backend     # Specify the root directory for this service within your monorepo (if applicable)
+                           # If you are deploying ONLY the backend folder, this can be '.'
+                           # If your render repo root is 'full-stack-chat-app', then use './backend'
+
+    # Build command to install dependencies
+    buildCommand: npm install
+
+    # Start command to run your server.js file
+    # Ensure 'src/server.js' is the correct path to your main server file
+    startCommand: node server.js
+
+    # Port your Node.js application listens on (as defined in server.js)
+    port: 5000
+
+    # Environment variables for your application
+    envVars:
+      - key: GEMINI_API_KEY
+        # IMPORTANT: Do NOT put your actual API key here directly in the YAML for security reasons.
+        # Instead, set its value securely in the Render dashboard under your service's "Environment" settings.
+        # This placeholder ensures Render knows to expect this variable.
+        value: "REPLACE_WITH_YOUR_GEMINI_API_KEY_IN_RENDER_DASHBOARD"
+      - key: PORT
+        value: 5000 # Ensure your Node.js app uses this port, or process.env.PORT
