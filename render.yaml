@@ -27,5 +27,3 @@ services:
         # Instead, set its value securely in the Render dashboard under your service's "Environment" settings.
         # This placeholder ensures Render knows to expect this variable.
         value: "REPLACE_WITH_YOUR_GEMINI_API_KEY_IN_RENDER_DASHBOARD"
-      - key: PORT
-        value: 5000 # Ensure your Node.js app uses this port, or process.env.PORT
