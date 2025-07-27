@@ -28,7 +28,7 @@ function App() {
 
     try {
       // Calling your Node.js backend
-      const backendApiUrl = 'http://localhost:5000/api/chat'; // Ensure this matches your backend's port and route
+      const backendApiUrl = 'https://think41.onrender.com/api/chat'; // Ensure this matches your backend's port and route
 
       // The backend expects 'messages' array
       const payload = {
